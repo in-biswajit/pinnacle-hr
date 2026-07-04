@@ -529,12 +529,12 @@ export default function Home() {
               const TagIcon = teamTagIcons[member.tag] ?? Star;
               return (
                 <Reveal className="relative">
-                  <div className="relative mx-auto h-80 w-full max-w-sm overflow-hidden rounded-[2.5rem] bg-brand-primary/10 sm:h-96">
+                  <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl">
                     <Image
                       src={member.image}
                       alt={member.name}
                       width={420}
-                      height={480}
+                      height={525}
                       className="h-full w-full object-cover"
                     />
                   </div>
@@ -579,12 +579,12 @@ export default function Home() {
               const TagIcon = teamTagIcons[member.tag] ?? Star;
               return (
                 <Reveal delay={0.2} className="relative">
-                  <div className="relative mx-auto h-80 w-full max-w-sm overflow-hidden rounded-[2.5rem] bg-brand-coral/10 sm:h-96">
+                  <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl">
                     <Image
                       src={member.image}
                       alt={member.name}
                       width={420}
-                      height={480}
+                      height={525}
                       className="h-full w-full object-cover"
                     />
                   </div>
