@@ -540,14 +540,14 @@ export const team = [
     title: "Director",
     tag: "Founder",
     bio: "Founded Pinnacle HR in 2008 and has led its growth into a multi-branch HR consulting firm.",
-    image: "/images/team/santosh-kumar-dash.jpg",
+    image: "/images/team/santosh-kumar-dash.png",
   },
   {
     name: "Abinash Tripathy",
     title: "Chief Operating Officer",
     tag: "Leadership",
     bio: "Oversees day-to-day operations, service quality, and delivery across all branches.",
-    image: "/images/team/abinash-tripathy.jpg",
+    image: "/images/team/abinash-tripathy.png",
   },
 ];
 
