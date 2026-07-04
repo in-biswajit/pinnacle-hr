@@ -73,10 +73,10 @@ export default function Header() {
           <Image
             src="/images/logo.png"
             alt={siteConfig.name}
-            width={160}
-            height={56}
+            width={200}
+            height={111}
             priority
-            className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-12"
+            className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-16"
           />
         </Link>
 
