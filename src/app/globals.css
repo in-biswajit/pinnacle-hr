@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #201a17;
+
+  --color-brand-primary: #0f8c8c;
+  --color-brand-primary-dark: #0b6b6b;
+  --color-brand-coral: #7a1f1f;
+  --color-brand-ink: #201a17;
+  --color-brand-slate: #6b625d;
+  --color-brand-lavender: #eaf7f6;
+  --color-brand-lavender-deep: #d5eeec;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-primary: var(--color-brand-primary);
+  --color-brand-primary-dark: var(--color-brand-primary-dark);
+  --color-brand-coral: var(--color-brand-coral);
+  --color-brand-ink: var(--color-brand-ink);
+  --color-brand-slate: var(--color-brand-slate);
+  --color-brand-lavender: var(--color-brand-lavender);
+  --color-brand-lavender-deep: var(--color-brand-lavender-deep);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 22s linear infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-float {
+    animation: none;
+  }
+}
