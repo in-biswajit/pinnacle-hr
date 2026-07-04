@@ -94,13 +94,13 @@ function HeroCarousel() {
           exit={{ opacity: 0, y: -16 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
-          <h1 className="mt-5 text-4xl font-bold leading-tight text-brand-ink sm:text-5xl">
+          <h1 className="mt-5 text-5xl font-bold leading-tight text-brand-ink sm:text-6xl">
             {words.join(" ")}{" "}
             <span className="relative inline-block text-brand-coral">
               {lastWord}
               <Sparkles
-                size={20}
-                className="absolute -right-6 -top-4 text-brand-primary"
+                size={24}
+                className="absolute -right-7 -top-5 text-brand-primary"
               />
             </span>
           </h1>
