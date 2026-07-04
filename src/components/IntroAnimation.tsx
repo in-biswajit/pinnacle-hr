@@ -20,7 +20,7 @@ export default function IntroAnimation() {
       return;
     }
     sessionStorage.setItem(SESSION_KEY, "true");
-    const timer = setTimeout(() => setShow(false), 6000);
+    const timer = setTimeout(() => setShow(false), 3000);
     return () => clearTimeout(timer);
   }, []);
 

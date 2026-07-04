@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   ArrowUpRight,
   Award,
@@ -67,10 +67,6 @@ function HeroCarousel() {
     return () => clearInterval(id);
   }, []);
 
-  const slide = heroSlides[index];
-  const words = slide.title.split(" ");
-  const lastWord = words.pop();
-
   return (
     <div>
       <motion.div
@@ -86,27 +82,37 @@ function HeroCarousel() {
         India&apos;s Trusted HR Partner Since {siteConfig.foundedYear}
       </motion.div>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -16 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-        >
-          <h1 className="mt-5 text-5xl font-bold leading-tight text-brand-ink sm:text-6xl">
-            {words.join(" ")}{" "}
-            <span className="relative inline-block text-brand-coral">
-              {lastWord}
-              <Sparkles
-                size={24}
-                className="absolute -right-7 -top-5 text-brand-primary"
-              />
-            </span>
-          </h1>
-          <p className="mt-5 max-w-md text-brand-slate">{slide.body}</p>
-        </motion.div>
-      </AnimatePresence>
+      {/* All slides are stacked in the same grid cell so the tallest one
+          sets the container height — swapping slides never shifts the
+          rest of the page up or down. */}
+      <div className="grid">
+        {heroSlides.map((slide, i) => {
+          const words = slide.title.split(" ");
+          const lastWord = words.pop();
+          const active = i === index;
+          return (
+            <motion.div
+              key={slide.title}
+              className="col-start-1 row-start-1"
+              animate={{ opacity: active ? 1 : 0, y: active ? 0 : 12 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              aria-hidden={!active}
+            >
+              <h1 className="mt-5 text-5xl font-bold leading-tight text-brand-ink sm:text-6xl">
+                {words.join(" ")}{" "}
+                <span className="relative inline-block text-brand-coral">
+                  {lastWord}
+                  <Sparkles
+                    size={24}
+                    className="absolute -right-7 -top-5 text-brand-primary"
+                  />
+                </span>
+              </h1>
+              <p className="mt-5 max-w-md text-brand-slate">{slide.body}</p>
+            </motion.div>
+          );
+        })}
+      </div>
 
       <div className="mt-8 flex flex-wrap items-center gap-4">
         <Link
