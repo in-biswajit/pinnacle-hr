@@ -6,7 +6,7 @@ export const siteConfig = {
     "Since 2008, Pinnacle HR has grown into a leading Human Resource Consulting firm and a one-stop shop for Recruitment, Staffing, Training, Campus Hiring, Background Verification, Higher Education, Compliance Services, and Digital Marketing.",
   founder: "Mr. Santosh Kumar Dash",
   foundedYear: 2008,
-  phones: ["+91-9090507070", "+91-9237248555"],
+  phones: ["+91-9237248555"],
   landline: "+91-0674-2541555",
   emails: {
     career: "career@pinnaclejobs.in",
